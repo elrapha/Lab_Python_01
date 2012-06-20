@@ -17,13 +17,17 @@ computation. This is because there was a period in history when March 1st, not J
 1st, was the beginning of the year.
 """
 
-A=raw_input('Enter month as a number between 1 and 12 where March is 1 and Feb is 12: ')
+A=raw_input('Enter month as a number between 1 and 12: ')
 
 B=raw_input('Enter the day of the month as numbers between 1 and 31: ')
 
 year=raw_input('Enter year (eg. 1999): ')
 
 A=int(A)
+A=A-2
+if A<0:
+    A=A+12
+    
 B=int(B)
 C=int(year)%100
 D=int(year)/100
@@ -44,9 +48,8 @@ Y=D/4
 Z = W + X + Y + B + C - 2*D
 R=Z % 7
 
-R=R%7
-
-print A+2,'/',B,'/',year,' falls on',R 
+months=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+print A+2,'/',B,'/',year,' falls on ' + months[R]
 
 
 
